@@ -1,9 +1,20 @@
-function App() {
+// Components
+import Header from './Header'
+import Intro from './Intro'
+import ProjectList from './ProjectList'
+import Footer from './Footer'
+// Stylesheets
+import '../styles/App.scss'
+
+const App = () => {
   return (
-    <div>
-      <h1>This is my new portfolio.</h1>
-    </div>
-  );
+      <div>
+        <Header />
+        <Intro />
+        <ProjectList />
+        <Footer />
+      </div>
+  )
 }
 
-export default App;
+export {App as default}

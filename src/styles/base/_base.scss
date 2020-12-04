@@ -1,0 +1,38 @@
+// Base styling
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: $secondary-font;
+}
+
+// Texts
+h1, h2, h3 {
+    font-family: $main-font;
+}
+
+p, a {
+    font-size: $m-size;
+}
+
+// Hide/show 
+.d-none {
+    display: none!important;
+}
+
+// Stop scroll
+.stop-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+// Smaller opacity 
+.smaller-opacity {
+    opacity: 0.5;
+}
