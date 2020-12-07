@@ -1,0 +1,49 @@
+// Hide/show 
+.d-none {
+    display: none!important;
+}
+
+// Stop scroll
+.stop-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
+// Side menu - opacity blocker
+.opacity-blocker {
+    height: 100vh;
+    width: 100vw;
+    margin: 0 10% 0 -10%;
+    top: 0;
+    background: #fff;
+    opacity: 0.75;
+    position: absolute;
+    z-index: 100;
+}
+
+// Sticky header
+.sticky-header {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+// Project types 
+.web-design, .graphic-design, .multimedia {
+    font-weight: 700;
+}
+
+.web-design {
+    color: purple;
+}
+
+.graphic-design {
+    color: blue;
+}
+
+.multimedia {
+    color: red;
+}
+
+// Lower opacity
+.lower-opacity {
+    opacity: 0.5;
+}

@@ -1,19 +1,19 @@
 // Components
-import Header from './Header'
-import Intro from './Intro'
-import ProjectList from './ProjectList'
-import Footer from './Footer'
+import Header from './repeating/Header'
+import Intro from './homepage/Intro'
+import ProjectList from './homepage/ProjectList'
+import Footer from './repeating/Footer'
 // Stylesheets
 import '../styles/App.scss'
 
 const App = () => {
   return (
-      <div>
+      <>
         <Header />
         <Intro />
         <ProjectList />
         <Footer />
-      </div>
+      </>
   )
 }
 

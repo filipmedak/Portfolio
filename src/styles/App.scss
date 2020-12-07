@@ -1,7 +1,8 @@
 @import '~@csstools/normalize.css';
 @import './base/_settings';
 @import './base/_base';
-@import './components/_header';
-@import './components/_intro';
-@import './components/project-list';
-@import './components/footer';
+@import './base/custom-classes';
+@import './components/repeating/header';
+@import './components/repeating/footer';
+@import './components/homepage/intro';
+@import './components/homepage/project-list';

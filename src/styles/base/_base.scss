@@ -7,32 +7,34 @@
 
 html {
     font-size: 62.5%;
+    font-family: $main-font;
+}
+
+#root {
     max-width: 90%;
     margin: 0 auto;
-    font-family: $secondary-font;
+}
+
+#root:not(header) {
+    max-width: 100%;
 }
 
 // Texts
 h1, h2, h3 {
-    font-family: $main-font;
+    font-weight: 700;
 }
 
 p, a {
     font-size: $m-size;
 }
 
-// Hide/show 
-.d-none {
-    display: none!important;
+a, button, span {
+    cursor: pointer;
 }
 
-// Stop scroll
-.stop-scroll {
-    height: 100%;
-    overflow: hidden;
-}
-
-// Smaller opacity 
-.smaller-opacity {
-    opacity: 0.5;
+/* Extra large devices */
+@media only screen and (min-width: $extra-large-breakpoint) {
+    #root {
+        max-width: 70%;
+    }
 }

@@ -1,0 +1,22 @@
+// Footer
+footer {
+    padding: $m-size 0 0 0;
+    max-width: 90%;
+    margin: 0 auto;
+
+    // Text
+    .footer-text {
+        text-align: center;
+        margin: $xl-size 0 auto 0;
+        padding: $xl-size 0;
+        border-top: 1px solid #000;
+        font-weight: 500;
+    }
+}
+
+/* Extra large devices */
+@media only screen and (min-width: $monstrous-breakpoint) {
+    footer {
+        max-width: 70%;
+    }
+}

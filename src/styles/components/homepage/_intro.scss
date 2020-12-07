@@ -1,0 +1,175 @@
+// Intro Section
+.intro {
+   margin: 8rem 0 0 0;
+   text-align: center;
+
+   // Text Section
+   .intro-text {
+
+        // Main text
+        h1 {
+            font-size: 4rem
+        }
+
+        .intro-text-one {
+            margin-bottom: 0;
+        }
+
+        .intro-text-two {
+            padding: 0 $l-size;
+            border-bottom: 1rem solid $main-color;
+            display: inline;
+        }
+
+        // Secondary text
+        p {
+            margin: $xl-size 0 $xl-size 0;
+            font-weight: normal;
+            font-size: 1.75rem;
+        }
+
+        // Buttons Section
+        .intro-buttons {
+
+            // Buttons
+            button, a {
+                text-decoration: none;
+                font-size: $m-size;
+                display: block;
+                background: none;
+                border: none;
+                padding: $s-size $l-size;
+                font-weight: 700;
+                text-transform: uppercase;
+                width: 20rem;
+                white-space: nowrap;
+                margin: 0 auto;
+            }
+
+            // Resume button
+            .resume-button {
+                border: 2px solid $darker-main-color;
+                color: $darker-main-color;
+                margin-bottom: $m-size;
+            }
+
+            // Contact button
+            .contact-button {
+                border: 2px solid $darker-main-color;
+                background: $darker-main-color;
+                color: #fff;
+            }
+        }        
+   }
+
+    // Image Section
+    .intro-image {
+       
+        // Intro illustration
+        .intro-illustration {
+            margin: $xl-size $m-size 0 $m-size;
+            max-width: 40rem;
+        }
+    } 
+}
+
+/* Medium devices */
+@media only screen and (min-width: $tablet-breakpoint) {
+    
+    // Intro Section
+    .intro {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        column-gap: 10rem;
+
+        // Image Section
+        .intro-image {
+            .intro-illustration {
+                max-width: 50rem;
+            }
+        }
+    }
+}
+
+/* Large devices */
+@media only screen and (min-width: $desktop-breakpoint) {
+    
+    // Intro Section
+    .intro {
+        // Text Section
+        .intro-text {
+            justify-self: end;
+
+            // Main text
+            h1 {
+                font-size: 5rem;
+            }
+
+            .intro-text-two {
+                padding: 0 $xl-size;
+                border-bottom: 1rem solid $main-color;
+            }
+
+            // Secondary text
+            p {
+                font-size: 2rem;
+                letter-spacing: 1px;
+                padding-top: $l-size;
+                padding-bottom: $s-size;
+            }
+
+            // Buttons Section
+            .intro-buttons {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                .resume-button, .contact-button {
+                    height: $xl-size;
+                    font-size: $m-size;
+                }
+            }        
+        }
+
+        // Image Section
+        .intro-image {
+            display: grid;
+
+             // Intro illustration
+            .intro-illustration {
+                max-width: 60rem;
+            }
+        }
+    }
+}
+
+/* Large devices */
+@media only screen and (min-width: $extra-large-breakpoint) {
+    
+    // Intro Section
+    .intro {
+        // Text Section
+        .intro-text {
+            // Main text
+            h1 {
+                font-size: 6rem;
+            }
+
+            // Secondary text
+            p {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+                padding-top: $l-size;
+                padding-bottom: $s-size;
+            }     
+        }
+
+        // Image Section
+        .intro-image {
+             // Intro illustration
+            .intro-illustration {
+                max-width: 60rem;
+            }
+        }
+    }
+}

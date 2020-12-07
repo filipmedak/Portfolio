@@ -1,0 +1,140 @@
+// Project list
+.project-list {
+
+    margin: 0 $l-size;
+
+    // Project list heading
+    .project-section-heading {
+        font-size: $l-size;
+        text-align: center;
+        margin: $xl-size 0 $m-size 0;
+        padding-top: $xl-size;
+    }
+
+    // Project filter
+    .project-filter {
+        text-align: center;
+        margin: $m-size 0 $xl-size 0;
+        padding: $s-size 0 $xl-size 0;
+
+        // Text
+        p, span {
+            display: inline-block;
+        }
+
+        p {
+            cursor: pointer;
+            font-size: $m-size;
+        }
+
+        // Separator
+        span {
+            padding: 0 $m-size;
+        }
+    }
+
+    // Project list
+    .project {
+        margin: 0 auto $xl-size auto;
+        padding: $m-size 0;
+        max-width: 55rem;
+
+        // Image box
+        .image-box {
+            display: grid;
+            width: 100%;
+            height: 40rem;
+
+            // Main image
+            .web-design-image {
+                border-left: $s-size solid $web-design-color;
+            }
+
+            .graphic-design-image {
+                border-left: $s-size solid $graphic-design-color;
+            }
+
+            .multimedia-image {
+                border-left: $s-size solid $multimedia-color;
+            }
+        }
+
+        // Text box
+        .text-box {
+            // Image name
+            .project-name {
+                font-weight: 700;
+                font-size: 2.5rem;
+                margin-top: $l-size;
+            }
+
+            // Image type
+            .project-type {
+                font-style: italic;
+                margin: $s-size 0 $m-size 0;
+            }
+
+            // Project link
+            .project-link {
+                font-size: $m-size;
+                color: #000;
+                font-weight: 900;
+                text-transform: uppercase;
+                border-bottom: 2px solid #000;
+            }
+        }
+    }
+}
+
+/* Large devices */
+@media only screen and (min-width: $desktop-breakpoint) {
+
+    // Project list
+    .project-list {
+        // Project list heading
+        .project-section-heading {
+            font-size: 4rem;
+        }
+
+        // Project filter
+        .project-filter {
+            text-align: center;
+            margin: $m-size 0 $xl-size 0;
+            padding: $s-size 0 $xl-size 0;
+
+            // Text
+            p, span {
+                font-size: 2rem;
+            }
+        }
+
+        // Project list
+        .project {
+            max-width: 100rem;
+            display: grid;
+            grid-template-rows: 40rem;
+            grid-template-columns: auto 30rem;
+            column-gap: 5rem;
+
+            // Text box
+            .text-box {
+                align-self: center;
+                white-space: nowrap;
+            }
+        }
+    }
+}
+
+/* Extra large devices */
+@media only screen and (min-width: $extra-large-breakpoint) {
+
+    // Project list
+    .project-list {
+
+        // Project list
+        .project {
+            max-width: 120rem;
+            grid-template-columns: auto 40rem;
+        }
+    }
+}

@@ -1,0 +1,109 @@
+// Header
+header {
+    display: grid;
+    align-items: center;
+    margin-top: $l-size;
+    grid-template-columns: 5% 50% 40% 5%;
+    grid-template-areas: 
+    '. logo icons .';
+    // Sticky setup  -- SIDE MENU NOT WORKING
+    position: sticky;
+    top: 0;
+    padding: 2rem 0;
+    background: #fff;
+
+    // FM logo
+    .main-logo-container {
+        grid-area: logo;
+
+        .main-logo {
+            display: inline-block;
+            color: #fff;
+            background: #000;
+            font-size: $l-size;
+            padding: 0 $s-size;
+            font-weight: 700;
+        }
+    }
+
+    // Social icons
+    .header-icons {
+        grid-area: icons;
+        justify-self: end;
+        display: inline-grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        
+        img {
+            max-width: 1.5rem;
+            margin-left: $s-size;
+        }
+
+        // Hamburger
+        .hamburger-icon {
+            margin-left: $m-size;
+            max-width: $xl-size;
+        }
+    }
+}
+
+// Side menu
+.side-menu {
+    background: #fff;
+    z-index: 10000;
+    position: fixed;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    font-weight: 700;
+    white-space: nowrap;
+    margin: -5.5rem 0 0 -5.5rem;
+    padding: 5.5rem 0 0 0;
+
+    // Close sign
+    .x-sign {
+        z-index: 10000;
+        position: fixed;
+        right: 7.5%;
+        max-width: 2.25rem;
+        font-weight: 900;
+    }
+
+    // Side menu block
+    .side-menu-list {
+        display: grid;
+        padding: 15vh 15vh 100vh $xl-size;
+        
+        // Side menu items
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: $l-size;
+            padding: $s-size 0;
+        }
+    }
+}
+
+/* Tablet devices */
+@media only screen and (min-width: $tablet-breakpoint) {
+    // Side menu
+    .side-menu {
+        width: 50vw;
+    }
+}
+
+/* Large devices */
+@media only screen and (min-width: $desktop-breakpoint) {
+    // Side menu
+    .side-menu {
+        width: 30vw;
+    }
+}
+
+/* Extra large devices */
+@media only screen and (min-width: $monstrous-breakpoint) {
+    // Header
+    header {
+        grid-template-columns: auto 40% 30% auto;
+    }
+}
