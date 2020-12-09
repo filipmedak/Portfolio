@@ -1,6 +1,11 @@
 // React components
+import { useContext } from 'react'
 import { useState, useEffect } from 'react'
-// Database
+// React Router
+import { Link } from 'react-router-dom'
+// Context
+import AppContext from '../../context/app-context'
+// Database 
 import database from '../../firebase/config'
 
 const ProjectList = () => {
@@ -8,8 +13,10 @@ const ProjectList = () => {
     const [projects, setProjects] = useState([])
     const [filteredProjects, setFilteredProjects] = useState([])
     const [error, setError] = useState()
+    // Context Values
+    const { setActiveProject, setDatabaseSoftware } = useContext(AppContext)
 
-    // Fetch data from database
+    // Fetch project data from database
     useEffect(() => {
         database.collection('projects').get()
         .then(response => {
@@ -27,6 +34,26 @@ const ProjectList = () => {
         .catch(error => {
             setError(error)
         })
+    }, [])
+
+    // Fetch software data from database
+    useEffect(() => {
+        database.collection('software').get()
+        .then(response => {
+            const fetchedSoftware = []
+            response.docs.forEach(document => {
+            const fetchedItem = {
+                id: document.id,
+                ...document.data()
+            }
+            fetchedSoftware.push(fetchedItem)
+            })
+            setDatabaseSoftware(fetchedSoftware)
+        })
+        .catch(error => {
+            setError(error)
+        })
+        // eslint-disable-next-line
     }, [])
  
     // Filter projects depending on type
@@ -51,6 +78,11 @@ const ProjectList = () => {
     // Display error if catched
     error && console.log(error)
 
+    // Reset page to top
+    const resetPagePosition = () => {
+        window.scroll({ top:0, left:0, behavior:'smooth'})
+    }
+
     return (
         <div className='project-list'>
             {/* Project Filter */}
@@ -68,7 +100,7 @@ const ProjectList = () => {
 
                 // Project image - type tagging
                 const imageClass = project.type.toLocaleLowerCase().replace(' ', '-').concat('-image')
-                const img = `url('${project.mainImg}')`
+                const img = `url('${project.mainImage}')`
                 const sectionStyle = {
                     height: '100%',
                     width: '100%',
@@ -79,16 +111,26 @@ const ProjectList = () => {
                 }
                 
                 return (
-                    <div className='project' key={project.id} onClick={() => console.log('Detailed project')}>
-                        <div className='image-box'>
-                            <div style={sectionStyle} className={imageClass}></div>
+                    <Link 
+                        to='/project' 
+                        onClick={() => {
+                            setActiveProject(project)
+                            resetPagePosition()
+                        }} 
+                        id={`project-${project.id}`} 
+                        key={project.id}
+                    >
+                        <div className='project'>
+                            <div className='image-box'>
+                                <div style={sectionStyle} className={imageClass}></div>
+                            </div>
+                            <div className='text-box'>
+                                <p className='project-name'>{project.name}</p>
+                                <p className='project-type'>{project.type}</p>
+                                <span className='project-link'>View details →</span>
+                            </div>
                         </div>
-                        <div className='text-box'>
-                            <p className='project-name'>{project.name}</p>
-                            <p className='project-type'>{project.type}</p>
-                            <span className='project-link'>View details →</span>
-                        </div>
-                    </div>
+                    </Link>
                 )
             })}
         </div>

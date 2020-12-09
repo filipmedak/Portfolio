@@ -1,5 +1,7 @@
-// React components
+// React Components
 import { useState } from 'react'
+// React Router Components
+import { Link } from 'react-router-dom'
 // Images
 import BehanceLogo from '../../img/behance-logo.svg'
 import GithubLogo from '../../img/github-logo.svg'
@@ -42,7 +44,7 @@ const Header = () => {
         <>
             <header>
                 <div className='main-logo-container'>
-                    <p className='main-logo'>FM</p>
+                    <Link className='main-logo' to='/'>FM</Link>
                 </div>
                 <div className='header-icons'>
                     <img src={GithubLogo} alt='Github Logo'/>
@@ -52,10 +54,9 @@ const Header = () => {
                 <div className='side-menu d-none' onClick={() => toggleHeader()}>
                     <img src={XIcon} className='x-sign' alt='X sign'></img>
                     <div className='side-menu-list'>
-                        <a href='https://bruh.com'>Home page</a>
-                        <a href='https://bruh.com'>Projects</a>
-                        <a href='https://bruh.com'>About me</a>
-                        <a href='https://bruh.com'>Contact</a>
+                        <Link to='/'>Home</Link>
+                        <Link to='/about'>About me</Link>
+                        <Link to='/contact'>Contact</Link>
                     </div>
                 </div>
                 {sideMenu && <div className='opacity-blocker' onClick={() => toggleHeader()}></div>}

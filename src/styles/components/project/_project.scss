@@ -1,0 +1,124 @@
+// Project
+.active-project {
+    max-width: 90%;
+    margin: 0 auto;
+    
+    // Project heading container
+    .active-project-heading {
+
+        // Project name
+        h1 {
+            font-size: $l-size;
+        }
+
+        // Project type
+        p {
+            color: $light-color;
+        }
+    }
+
+    // Project links
+    .active-project-links {
+        margin: $m-size 0 $xl-size 0;
+
+        // Links
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #000;
+            border-bottom: 2px solid #000;
+            padding-bottom: 0.2rem;
+        }
+
+        // Separator
+        span {
+            font-weight: 500;
+            font-size: 2rem;
+            margin: 0 1.5rem;
+            padding-top: 0.2rem;
+        }
+    }
+
+    // Project main image container
+    .active-project-main-image-container {
+        width: 90vw;
+        max-width: 90vw;
+        height: 30vh;
+        max-height: 30vh;
+
+        // Main image
+        .active-project-main-image {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+
+    // Project software container
+    .active-project-software-list-container {
+        margin-top: $xl-size;
+        display: grid;
+
+        // Container heading
+        h2 {
+            font-size: 2.75rem;
+            margin-bottom: $l-size;
+        }
+
+        // Single project software
+        .active-project-software {
+            margin: 0 0 $m-size 0;
+            
+            // Software image
+            img {
+                max-width: 4rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: $m-size;
+            }
+
+            // Software text
+            p {
+                vertical-align: middle;
+                display: inline-block;
+            }
+        }
+    }
+
+    // Project description container
+    .active-project-description {
+        margin: $xl-size 0;
+
+         // Container heading
+         h2 {
+            font-size: 2.75rem;
+            margin-bottom: $l-size;
+        }
+    }
+
+    // Gallery container
+    .active-project-image-gallery {
+        display: grid;
+        row-gap: 3rem;
+
+        // Image container
+        .active-project-image-container {
+            width: 90vw;
+            max-width: 90vw;
+            height: 30vh;
+            max-height: 30vh;
+
+             // Main image
+            .active-project-image {
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+            }
+        }
+    }
+}

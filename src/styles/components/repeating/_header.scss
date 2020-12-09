@@ -6,7 +6,8 @@ header {
     grid-template-columns: 5% 50% 40% 5%;
     grid-template-areas: 
     '. logo icons .';
-    // Sticky setup  -- SIDE MENU NOT WORKING
+
+    // Sticky setup
     position: sticky;
     top: 0;
     padding: 2rem 0;
@@ -23,6 +24,7 @@ header {
             font-size: $l-size;
             padding: 0 $s-size;
             font-weight: 700;
+            text-decoration: none;
         }
     }
 
@@ -43,6 +45,7 @@ header {
         .hamburger-icon {
             margin-left: $m-size;
             max-width: $xl-size;
+            cursor: pointer;
         }
     }
 }
@@ -67,6 +70,7 @@ header {
         right: 7.5%;
         max-width: 2.25rem;
         font-weight: 900;
+        cursor: pointer;
     }
 
     // Side menu block

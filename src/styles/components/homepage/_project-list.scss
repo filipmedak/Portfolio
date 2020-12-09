@@ -33,11 +33,18 @@
         }
     }
 
+    // Reset link values
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+
     // Project list
     .project {
         margin: 0 auto $xl-size auto;
         padding: $m-size 0;
         max-width: 55rem;
+        cursor: pointer;
 
         // Image box
         .image-box {
@@ -114,7 +121,7 @@
             display: grid;
             grid-template-rows: 40rem;
             grid-template-columns: auto 30rem;
-            column-gap: 5rem;
+            column-gap: 7.5rem;
 
             // Text box
             .text-box {

@@ -1,3 +1,6 @@
+// React Router
+import { Link } from 'react-router-dom'
+// Images
 import IntroIllustration from '../../img/intro-illustration.svg'
 
 const Intro = () => {
@@ -9,7 +12,7 @@ const Intro = () => {
                 <p>Looking for a simple, clean and unique <br/> website design and app design?</p>
                 <div className='intro-buttons'>
                     <a className='resume-button' href='https://firebasestorage.googleapis.com/v0/b/portfolio-1d829.appspot.com/o/documents%2FCV_Filip-Medak.pdf?alt=media&token=57808013-dc63-47a9-9e85-d3bdf2be5b72'>Resume</a>
-                    <button className='contact-button'>Contact me</button>
+                    <Link className='contact-button' to='/contact'>Contact me</Link>
                 </div>
             </div>
            <div className='intro-image'>
