@@ -1,25 +1,37 @@
 // React Router
 import { Link } from 'react-router-dom'
+// React Spring
+import {animated, useSpring} from 'react-spring'
 // Images
 import IntroIllustration from '../../img/intro-illustration.svg'
 
 const Intro = () => {
+
+    // Animations
+    const props = useSpring({
+        config: {duration: 750},
+        from: {opacity: 0},
+        to: {opacity: 1},
+    })
+
     return (
-        <div className='intro'>
+        <animated.div style={props} className='intro'>
             <div className='intro-text'>
-                <h1 className='intro-text-one'>Passionate Web</h1>
-                <h1 className='intro-text-two'>Developer</h1>
-                <p>Looking for a simple, clean and unique <br/> website design and app design?</p>
+                <div className='intro-text-container'>
+                    <h1 className='intro-text-one'>Passionate</h1>
+                    <h1 className='intro-text-two'>Multimedia</h1>
+                    <h1 className='intro-text-three'>Engineer</h1>
+                </div>
+                <p>Looking for a simple, clean and unique design?</p>
                 <div className='intro-buttons'>
-                    <a className='resume-button' href='https://firebasestorage.googleapis.com/v0/b/portfolio-1d829.appspot.com/o/documents%2FCV_Filip-Medak.pdf?alt=media&token=57808013-dc63-47a9-9e85-d3bdf2be5b72'>Resume</a>
                     <Link className='contact-button' to='/contact'>Contact me</Link>
                 </div>
             </div>
            <div className='intro-image'>
                 <img src={IntroIllustration} className='intro-illustration' alt='Personal Illustration'/>
            </div>
-        </div>
+        </animated.div>
     )
 }
 
-export {Intro as default}
+export { Intro as default }

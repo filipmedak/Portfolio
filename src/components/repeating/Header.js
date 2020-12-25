@@ -1,35 +1,18 @@
 // React Components
 import { useState } from 'react'
+// Custom Components
+import SideMenu from './SideMenu'
 // React Router Components
 import { Link } from 'react-router-dom'
 // Images
 import BehanceLogo from '../../img/behance-logo.svg'
 import GithubLogo from '../../img/github-logo.svg'
 import HamburgerIcon from '../../img/hamburger-icon.svg'
-import XIcon from '../../img/x-icon.svg'
+
 
 const Header = () => {
-
     // Init values
-    const [sideMenu, setSideMenu] = useState(false)
-
-    // Toggle side menu
-    const toggleHeader = () => {
-        setSideMenu(!sideMenu)
-
-        // Grab elements & remove/add classes
-        const menuElement = document.querySelector('.side-menu')
-        const bodyElement = document.querySelector('body')
-       
-        if(!sideMenu) {
-            menuElement.classList.remove('d-none')
-            bodyElement.classList.add('stop-scroll')
-
-        } else {
-            menuElement.classList.add('d-none')
-            bodyElement.classList.remove('stop-scroll')
-        }
-    }
+    const [sideMenu, toggleSideMenu] = useState(false)
 
     // Sticky navigation
     window.onscroll = () => {
@@ -37,8 +20,11 @@ const Header = () => {
         let offset = headerElement.offsetTop
 
         offset > 50 ? headerElement.classList.add('sticky-header') : headerElement.classList.remove('sticky-header')
-
     }
+
+    // Stop scroll on active SideMenu
+    const bodyElement = document.querySelector('body')
+    sideMenu ? bodyElement.classList.add('stop-scroll') : bodyElement.classList.remove('stop-scroll')
 
     return (
         <>
@@ -49,17 +35,10 @@ const Header = () => {
                 <div className='header-icons'>
                     <img src={GithubLogo} alt='Github Logo'/>
                     <img src={BehanceLogo} alt='Behance Logo'/>
-                    <img src={HamburgerIcon} onClick={() => toggleHeader()} className='hamburger-icon' alt='Hamburger Icon'/>
+                    <img src={HamburgerIcon} onClick={() => toggleSideMenu(!sideMenu)} className='hamburger-icon' alt='Hamburger Icon'/>
                 </div>
-                <div className='side-menu d-none' onClick={() => toggleHeader()}>
-                    <img src={XIcon} className='x-sign' alt='X sign'></img>
-                    <div className='side-menu-list'>
-                        <Link to='/'>Home</Link>
-                        <Link to='/about'>About me</Link>
-                        <Link to='/contact'>Contact</Link>
-                    </div>
-                </div>
-                {sideMenu && <div className='opacity-blocker' onClick={() => toggleHeader()}></div>}
+                <SideMenu sideMenu={sideMenu} toggleSideMenu={toggleSideMenu} />
+                {sideMenu && <div onClick={() => toggleSideMenu(!sideMenu)} className='opacity-blocker'></div>}
             </header>
         </>
     )

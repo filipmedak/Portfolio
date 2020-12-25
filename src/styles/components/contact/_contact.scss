@@ -1,0 +1,117 @@
+// Contact container
+.contact {
+    max-width: 90%;
+    margin: 0 auto;
+
+    // Heading container
+    .contact-heading-container {
+        display: inline-block;
+        margin-top: $m-size;
+
+        // Main heading
+        .contact-main-heading {
+            font-size: $l-size;
+            white-space: normal;
+        }
+
+        .contact-main-heading:after {
+            content: ""; 
+            display: block; 
+            width: inherit; 
+            padding-top: $xs-size; 
+            border-bottom: $xs-size solid; 
+        }
+
+        // Email text
+        .contact-heading-email {
+            color: $light-color;
+            margin-top: -$xs-size;
+        }
+    }
+
+    // Form container
+    #form {
+        display: grid;
+        margin-top: $l-size;
+
+        // Input container
+        label {
+            font-weight: 500;
+            font-size: $m-size;
+            margin: $s-size 0;
+
+            // Input elements
+            input, textarea {
+                width: 100%;
+                max-width: 50rem;
+                height: 100%;
+                max-height: 3rem;
+                margin-top: $xs-size;
+            }
+
+            textarea {
+                max-height: 25rem;
+            }
+        }
+
+        // Submit button
+        .contact-submit-button {
+            font-size: $m-size;
+            font-family: $main-font;
+            text-transform: uppercase;
+            font-weight: 700;
+            max-width: 15rem;
+            padding: 0.5rem 0rem;
+            background: transparent;
+            border: 2px solid #000;
+            margin-top: $xl-size;
+        }
+    }
+}
+
+/* Extra large devices */
+@media only screen and (min-width: $extra-large-breakpoint) {
+    // Contact container
+    .contact {
+        max-width: 80%;
+    }
+}
+
+/* Monsterous large devices */
+@media only screen and (min-width: $monstrous-breakpoint) {
+    // Contact container
+    .contact {
+        max-width: 65%;
+
+        // Form container
+    #form {
+        display: grid;
+        margin-top: $l-size;
+
+            // Input container
+            label {
+                font-weight: 500;
+                font-size: $m-size;
+                margin: $s-size 0;
+
+                // Input elements
+                input, textarea {
+                    max-width: 70rem;
+                    margin-top: $m-size;
+                }
+            }
+
+            // Submit button
+            .contact-submit-button {
+                font-family: $main-font;
+                text-transform: uppercase;
+                font-weight: 700;
+                max-width: 12.5rem;
+                padding: 0.5rem 0;
+                background: transparent;
+                border: 2px solid #000;
+                margin-top: $xl-size;
+            }
+        }
+    }
+}

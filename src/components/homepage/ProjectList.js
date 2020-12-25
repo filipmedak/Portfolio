@@ -1,20 +1,22 @@
 // React components
-import { useContext } from 'react'
-import { useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
+// React Spring
+import {animated, useSpring} from 'react-spring'
 // React Router
 import { Link } from 'react-router-dom'
 // Context
 import AppContext from '../../context/app-context'
-// Database 
+// Database
 import database from '../../firebase/config'
 
 const ProjectList = () => {
+    // Context Values
+    const { setActiveProject, setDatabaseSoftware } = useContext(AppContext)
+
     // Init values
     const [projects, setProjects] = useState([])
     const [filteredProjects, setFilteredProjects] = useState([])
     const [error, setError] = useState()
-    // Context Values
-    const { setActiveProject, setDatabaseSoftware } = useContext(AppContext)
 
     // Fetch project data from database
     useEffect(() => {
@@ -50,9 +52,6 @@ const ProjectList = () => {
             })
             setDatabaseSoftware(fetchedSoftware)
         })
-        .catch(error => {
-            setError(error)
-        })
         // eslint-disable-next-line
     }, [])
  
@@ -80,11 +79,22 @@ const ProjectList = () => {
 
     // Reset page to top
     const resetPagePosition = () => {
-        window.scroll({ top:0, left:0, behavior:'smooth'})
+        window.scroll(0, 0)
+        // window.scroll({ top:0, left:0, behavior:'auto'})
     }
 
+    // Animations
+    const props = useSpring({
+        config: {duration: 750},
+        from: {opacity: 0},
+        to: {opacity: 1},
+    })
+
+    // Sort project (Web design, Graphic design, Multimedia)
+    filteredProjects.sort((a, b) => (a.sortValue > b.sortValue) ? -1 : 1)
+
     return (
-        <div className='project-list'>
+        <animated.div style={props} className='project-list'>
             {/* Project Filter */}
             <h2 className='project-section-heading'>Latest Work</h2>
             <div className='project-filter'>
@@ -127,13 +137,13 @@ const ProjectList = () => {
                             <div className='text-box'>
                                 <p className='project-name'>{project.name}</p>
                                 <p className='project-type'>{project.type}</p>
-                                <span className='project-link'>View details →</span>
+                                <span className='project-link'>View details</span><span className='project-link-arrow'>→</span>
                             </div>
                         </div>
                     </Link>
                 )
             })}
-        </div>
+        </animated.div>
     )
 }
 

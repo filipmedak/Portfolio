@@ -20,11 +20,17 @@
         // Text
         p, span {
             display: inline-block;
+            z-index: 1;
         }
 
         p {
             cursor: pointer;
             font-size: $m-size;
+            transition: $transition-time;
+        }
+
+        p:hover {
+            font-weight: 700;
         }
 
         // Separator
@@ -45,25 +51,14 @@
         padding: $m-size 0;
         max-width: 55rem;
         cursor: pointer;
+        position: relative;
+        z-index: -1;
 
         // Image box
         .image-box {
             display: grid;
             width: 100%;
             height: 40rem;
-
-            // Main image
-            .web-design-image {
-                border-left: $s-size solid $web-design-color;
-            }
-
-            .graphic-design-image {
-                border-left: $s-size solid $graphic-design-color;
-            }
-
-            .multimedia-image {
-                border-left: $s-size solid $multimedia-color;
-            }
         }
 
         // Text box
@@ -82,12 +77,23 @@
             }
 
             // Project link
-            .project-link {
+            .project-link, .project-link-arrow {
                 font-size: $m-size;
                 color: #000;
                 font-weight: 900;
                 text-transform: uppercase;
                 border-bottom: 2px solid #000;
+                transition: $transition-time;
+            }
+
+            .project-link:hover {
+                color: $darker-main-color;
+                border-color: $darker-main-color;
+            }
+
+            .project-link-arrow {
+                border-bottom: 2px solid transparent;
+                margin-left: $xs-size;
             }
         }
     }
@@ -113,6 +119,10 @@
             p, span {
                 font-size: 2rem;
             }
+
+            p {
+                transition: $transition-time;
+            }
         }
 
         // Project list
@@ -127,6 +137,20 @@
             .text-box {
                 align-self: center;
                 white-space: nowrap;
+
+                // Project name
+                .project-name {
+                    font-size: 3rem;
+                }
+
+                .project-type {
+                    font-size: 1.75rem;
+                    margin-bottom: 2.5rem;
+                }
+
+                .project-link, .project-link-arrow {
+                    font-size: 2rem;
+                }
             }
         }
     }

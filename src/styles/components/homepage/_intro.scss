@@ -5,59 +5,60 @@
 
    // Text Section
    .intro-text {
+        display: grid;
+        justify-items: center;
+        margin-bottom: $l-size;
 
-        // Main text
-        h1 {
-            font-size: 4rem
-        }
+        // Text contaier
+        .intro-text-container {
+            text-align: left;  
+            border-left: 1rem solid $main-color;
+            padding-left: $l-size;
 
-        .intro-text-one {
-            margin-bottom: 0;
-        }
-
-        .intro-text-two {
-            padding: 0 $l-size;
-            border-bottom: 1rem solid $main-color;
-            display: inline;
+            // Main text
+            h1 {
+                font-size: 4rem;    
+                margin: 0;
+                padding: 0 0 $xs-size 0;    
+                white-space: nowrap;
+                letter-spacing: 5px;
+            }
         }
 
         // Secondary text
         p {
             margin: $xl-size 0 $xl-size 0;
             font-weight: normal;
-            font-size: 1.75rem;
+            font-size: 2rem;
+            max-width: 35rem;
         }
 
         // Buttons Section
         .intro-buttons {
 
             // Buttons
-            button, a {
+            .contact-button {
                 text-decoration: none;
                 font-size: $m-size;
                 display: block;
                 background: none;
                 border: none;
-                padding: $s-size $l-size;
+                padding: $m-size $l-size;
                 font-weight: 700;
                 text-transform: uppercase;
-                width: 20rem;
+                width: 30rem;
                 white-space: nowrap;
                 margin: 0 auto;
-            }
-
-            // Resume button
-            .resume-button {
-                border: 2px solid $darker-main-color;
-                color: $darker-main-color;
-                margin-bottom: $m-size;
-            }
-
-            // Contact button
-            .contact-button {
-                border: 2px solid $darker-main-color;
+                transition: $transition-time;
+                border: 2.5px solid $darker-main-color;
                 background: $darker-main-color;
                 color: #fff;
+            }
+
+            .contact-button:hover {
+                color: $darker-main-color;
+                background: #fff;
+                border: 2.5px solid $darker-main-color;
             }
         }        
    }
@@ -68,7 +69,7 @@
         // Intro illustration
         .intro-illustration {
             margin: $xl-size $m-size 0 $m-size;
-            max-width: 40rem;
+            max-width: 60rem;
         }
     } 
 }
@@ -79,14 +80,25 @@
     // Intro Section
     .intro {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         align-items: center;
-        column-gap: 10rem;
+        column-gap: 5rem;
+        max-width: 90%;
+        margin: 8rem auto auto auto;
+
+        // Text Section
+        .intro-text {
+            // Text contaier
+            .intro-text-container {
+                padding-left: $xl-size;
+                justify-self: start;
+            }
+        }
 
         // Image Section
         .intro-image {
             .intro-illustration {
-                max-width: 50rem;
+                margin: 0;
             }
         }
     }
@@ -97,38 +109,41 @@
     
     // Intro Section
     .intro {
+
+        grid-template-columns: 1fr 1.25fr;
+
         // Text Section
         .intro-text {
-            justify-self: end;
+            justify-self: center;
 
-            // Main text
-            h1 {
-                font-size: 5rem;
-            }
+            // Text contaier
+            .intro-text-container {
+                justify-self: start;
 
-            .intro-text-two {
-                padding: 0 $xl-size;
-                border-bottom: 1rem solid $main-color;
-            }
+                h1 {
+                    font-size: 5.25rem;
+                    letter-spacing: 3px;
+                }
+            }     
 
             // Secondary text
             p {
+                justify-self: start;
+                margin-left: $xl-size;
                 font-size: 2rem;
                 letter-spacing: 1px;
-                padding-top: $l-size;
-                padding-bottom: $s-size;
             }
 
-            // Buttons Section
+             // Buttons Section
             .intro-buttons {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
+                justify-self: start;
+                margin-left: $xl-size;
 
-                .resume-button, .contact-button {
-                    height: $xl-size;
-                    font-size: $m-size;
+                // Buttons
+                .contact-button {
+                    width: 35rem;
                 }
-            }        
+            }       
         }
 
         // Image Section
@@ -137,7 +152,7 @@
 
              // Intro illustration
             .intro-illustration {
-                max-width: 60rem;
+                max-width: 70rem;
             }
         }
     }
@@ -148,28 +163,37 @@
     
     // Intro Section
     .intro {
+        max-width: 80%;
+
         // Text Section
         .intro-text {
-            // Main text
-            h1 {
-                font-size: 6rem;
-            }
 
-            // Secondary text
-            p {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
-                padding-top: $l-size;
-                padding-bottom: $s-size;
-            }     
+            .intro-text-container {
+                // Secondary text
+                p {
+                    font-size: 2.25rem;
+                    white-space: normal;
+                    letter-spacing: 1px;
+                    padding: $s-size 0 $l-size 0;
+                    max-width: 47.5rem;
+                } 
+            }
         }
 
         // Image Section
         .intro-image {
              // Intro illustration
             .intro-illustration {
-                max-width: 60rem;
+                max-width: 80rem;
             }
         }
+    }
+}
+
+/* Monsterious devices */
+@media only screen and (min-width: $monstrous-breakpoint) {
+    // Intro Section
+    .intro {
+        max-width: 72.5%;
     }
 }

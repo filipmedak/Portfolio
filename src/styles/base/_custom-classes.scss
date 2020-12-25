@@ -35,12 +35,25 @@
     color: purple;
 }
 
+.web-design-border::after {
+    border-color: purple!important;
+}
+
 .graphic-design {
     color: blue;
 }
 
+.graphic-design-border::after {
+    border-color: blue!important;
+}
+
+
 .multimedia {
     color: red;
+}
+
+.multimedia-border::after {
+    border-color: red!important;
 }
 
 // Lower opacity

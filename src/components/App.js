@@ -6,6 +6,7 @@ import Header from './repeating/Header'
 import Intro from './homepage/Intro'
 import Project from './project/Project'
 import ProjectList from './homepage/ProjectList'
+import Contact from './contact/Contact'
 import Footer from './repeating/Footer'
 // Stylesheets
 import '../styles/App.scss'
@@ -15,23 +16,26 @@ import AppContext from '../context/app-context'
 const App = () => {
   
   // Context Values
-  const [ activeProject, setActiveProject ] = useState()
-  const [ databaseSoftware, setDatabaseSoftware ] = useState()
+  const [ activeProject, setActiveProject ] = useState(JSON.parse(localStorage.getItem('active-project')))
+  const [ databaseSoftware, setDatabaseSoftware ] = useState(JSON.parse(localStorage.getItem('database-software')))
 
   return (
       <AppContext.Provider value={{ activeProject, setActiveProject, databaseSoftware, setDatabaseSoftware }}>
         <Router>
-          <Header />
-          <Switch>
-            <Route exact path='/'>
-              <Intro />
-              <ProjectList />
-            </Route>
-            <Route path='/project'>
-              <Project />
-            </Route>
-          </Switch>
-          <Footer />
+            <Header />
+            <Switch>
+              <Route exact path='/'>
+                <Intro />
+                <ProjectList />
+              </Route>
+              <Route exact path='/project'>
+                <Project />
+              </Route>
+              <Route exact path='/contact'>
+                <Contact />
+              </Route>
+            </Switch>
+            <Footer />
         </Router>
       </AppContext.Provider>
   )

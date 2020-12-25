@@ -1,4 +1,5 @@
 @import '~@csstools/normalize.css';
+@import './base/animations';
 @import './base/_settings';
 @import './base/_base';
 @import './base/custom-classes';
@@ -7,3 +8,4 @@
 @import './components/homepage/intro';
 @import './components/homepage/project-list';
 @import './components/project/project';
+@import './components/contact/contact';
