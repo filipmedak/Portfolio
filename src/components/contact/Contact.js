@@ -9,6 +9,7 @@ const Contact = () => {
     const [email, setEmail] = useState('')
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
+    const [finished, setFinished] = useState(false)
 
     // Form function
     const sendEmail = (e) => {
@@ -26,6 +27,7 @@ const Contact = () => {
         setSubject('')
         setMessage('')
         e.target.reset()
+        setFinished(true)
     }
 
     return (
@@ -34,9 +36,12 @@ const Contact = () => {
                 <h1 className='contact-main-heading'>Contact me.</h1>
                 <p className='contact-heading-email'>email: filip.medak213@gmail.com</p>
             </div>
+
+            {finished && <p className='contact-finish-text fade-in-bottom'>E-Mail has been sent. Thank you.</p>}
+
             <form onSubmit={sendEmail} id='form'>
                 <label>
-                    Your name *: <br/>
+                    Your name : <br/>
                     <input
                         name="name"
                         value={name}
@@ -45,7 +50,7 @@ const Contact = () => {
                     />
                 </label>
                 <label>
-                    Your e-mail *: <br/>
+                    Your e-mail : <br/>
                     <input
                         name="email"
                         type="email"
@@ -55,7 +60,7 @@ const Contact = () => {
                     />
                 </label>
                 <label>
-                    Your subject: <br/>
+                    Your subject : <br/>
                     <input
                         name="subject"
                         value={subject}
@@ -63,7 +68,7 @@ const Contact = () => {
                     />
                 </label> 
                 <label>
-                    Your message * <br/>
+                    Your message :<br/>
                     <textarea 
                     rows='10' 
                     cols='50' 

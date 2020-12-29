@@ -1,6 +1,5 @@
 // Header
 header {
-    overflow: hidden;
     display: grid;
     align-items: center;
     margin-top: $l-size;
@@ -66,6 +65,7 @@ header {
     margin: -10vh 0 0 -5.5rem;
     padding: 10rem 0 0 $m-size;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
 
     // Close sign
     .x-sign {

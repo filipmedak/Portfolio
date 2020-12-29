@@ -61,7 +61,7 @@ const Project = () => {
             </div>
             <div className='active-project-image-gallery'>
                 {
-                    imageGallery && imageGallery.map(image => {
+                    (imageGallery && imageGallery[0]) && imageGallery.map(image => {
                         return (
                             <div className='active-project-image-container' key={image}>
                                 <div className='active-project-image' style={{backgroundImage: `url(${image})`}}></div>

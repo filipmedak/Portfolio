@@ -1,0 +1,169 @@
+// About
+.about {
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+
+    // About text container
+    .about-text-container {
+        display: inline-block;
+        margin-top: $m-size;
+
+        // About text main heading
+        .about-heading {
+            font-size: $l-size;
+            white-space: normal;
+        }
+
+        // Main heading border
+        .about-heading:after {
+            content: ""; 
+            display: block; 
+            width: inherit; 
+            padding-top: $xs-size; 
+            border-bottom: $xs-size solid; 
+            max-width: 25rem;
+            margin-bottom: $l-size;
+        }
+
+        // Paragraph text
+        p {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        // Third paragraph
+        .about-text-3 {
+            margin-top: $xl-size;
+        }
+
+        // About buttons container
+        .about-buttons-container {
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr;
+            row-gap: 1rem;
+            margin: $xl-size auto $m-size auto;
+
+            // Shared link values
+            a {
+                font-size: $m-size;
+                font-family: $main-font;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 700;
+                max-width: 15rem;
+                padding: 1.25rem 4rem;
+                text-align: center;
+                cursor: pointer;
+                transition: $transition-time;
+            }
+
+            // Projects link
+            .about-projects-button {
+                background: transparent;
+                border: 2px solid #000000;
+                color: #000000;
+            }
+
+            // Resume link
+            .about-resume-button {
+                background: #000000;
+                color: #ffffff;
+                border: 4px solid #000000;
+            }
+        }
+    }
+
+    // About image container
+    .about-image-container {
+        margin: $xl-size auto 0 auto;
+
+        // Image 
+        .about-image-avatar {
+            height: 35rem;
+        }
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 25rem) {
+    // About
+    .about {
+        .about-text-container {
+            .about-buttons-container {
+                grid-template-columns: 1fr 1fr;
+                column-gap: $l-size;
+
+                // Projects link
+                .about-projects-button {
+                    justify-self: end;
+                }
+
+                // Resume link
+                .about-resume-button {
+                    justify-self: start;
+                }
+            }
+        }
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: $tablet-breakpoint) {
+    // About
+    .about {
+        grid-template-columns: 1fr 1fr;
+        margin-top: $xl-size;
+    }
+}
+
+/* Extra large devices */
+@media only screen and (min-width: $extra-large-breakpoint) {
+    // About
+    .about {
+        max-width: 80%;
+    }
+}
+
+/* Monsterous large devices */
+@media only screen and (min-width: $monstrous-breakpoint) {
+    // About
+    .about {
+        max-width: 65%;
+
+        // About text container
+        .about-text-container {
+            // About heading
+            .about-heading{
+                font-size: 4rem;
+                margin-bottom: $xl-size;
+            }
+
+            p {
+                font-size: 2rem;
+            }
+
+            // Links container
+            .about-buttons-container {
+
+                
+                a {
+                    max-width: 100rem;
+                    width: 100%;
+                }
+            }
+        }
+
+        // About image container
+        .about-image-container {
+            margin: 0;
+            justify-self: center;
+
+            // Image 
+            .about-image-avatar {
+                height: 45rem;
+            }
+        }
+    }
+}

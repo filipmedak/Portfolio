@@ -6,8 +6,9 @@ import Header from './repeating/Header'
 import Intro from './homepage/Intro'
 import Project from './project/Project'
 import ProjectList from './homepage/ProjectList'
-import Contact from './contact/Contact'
 import Footer from './repeating/Footer'
+import Contact from './contact/Contact'
+import About from './about/About'
 // Stylesheets
 import '../styles/App.scss'
 // Context
@@ -30,6 +31,9 @@ const App = () => {
               </Route>
               <Route exact path='/project'>
                 <Project />
+              </Route>
+              <Route exact path='/about'>
+                <About />
               </Route>
               <Route exact path='/contact'>
                 <Contact />

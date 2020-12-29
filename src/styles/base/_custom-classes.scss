@@ -32,28 +32,28 @@
 }
 
 .web-design {
-    color: purple;
+    color: $web-design-color;
 }
 
 .web-design-border::after {
-    border-color: purple!important;
+    border-color: $web-design-color!important;
 }
 
 .graphic-design {
-    color: blue;
+    color: $graphic-design-color;
 }
 
 .graphic-design-border::after {
-    border-color: blue!important;
+    border-color: $graphic-design-color!important;
 }
 
 
 .multimedia {
-    color: red;
+    color: $multimedia-color;
 }
 
 .multimedia-border::after {
-    border-color: red!important;
+    border-color: $multimedia-color!important;
 }
 
 // Lower opacity

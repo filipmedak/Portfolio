@@ -33,8 +33,8 @@ const Header = () => {
                     <Link className='main-logo' to='/'>FM</Link>
                 </div>
                 <div className='header-icons'>
-                    <img src={GithubLogo} alt='Github Logo'/>
-                    <img src={BehanceLogo} alt='Behance Logo'/>
+                    <a href='https://github.com/filipmedak'><img src={GithubLogo} alt='Github Logo'/></a>
+                    <a href='https://www.behance.net/filipmedak'><img src={BehanceLogo} alt='Behance Logo'/></a>
                     <img src={HamburgerIcon} onClick={() => toggleSideMenu(!sideMenu)} className='hamburger-icon' alt='Hamburger Icon'/>
                 </div>
                 <SideMenu sideMenu={sideMenu} toggleSideMenu={toggleSideMenu} />

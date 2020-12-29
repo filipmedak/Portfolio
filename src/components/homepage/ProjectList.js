@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 // Context
 import AppContext from '../../context/app-context'
 // Database
-import database from '../../firebase/config'
+import { database } from '../../firebase/config'
 
 const ProjectList = () => {
     // Context Values
@@ -130,7 +130,7 @@ const ProjectList = () => {
                         id={`project-${project.id}`} 
                         key={project.id}
                     >
-                        <div className='project'>
+                        <div className='project fade-in-bottom'>
                             <div className='image-box'>
                                 <div style={sectionStyle} className={imageClass}></div>
                             </div>
