@@ -2,17 +2,10 @@
 import React from 'react'
 // React Router Components
 import { Link } from 'react-router-dom'
-// Database storage
-import { fileStorage } from '../../firebase/config'
 // Image
 import Avatar from '../../img/avatar.svg'
 
 const Contact = () => {
-
-    // fileStorage.child('documents/FilipMedak-ENG.pdf').getDownloadURL().then((function(url) {
-    //     console.log(url);
-    // }))
-
     return (
         <div className='about'>
             <div className='about-text-container'>
@@ -22,11 +15,11 @@ const Contact = () => {
                 <p className='about-text-3'>For more information, click on of the buttons below.</p>
                 <div className='about-buttons-container'>
                     <Link className='about-projects-button' to='/'>Projects</Link>
-                    <a className='about-resume-button' href=''>Resume</a>
+                    <a className='about-resume-button' href='https://firebasestorage.googleapis.com/v0/b/portfolio-1d829.appspot.com/o/documents%2FFilipMedak-ENG.pdf?alt=media&token=0c251439-58a3-43e0-a9f6-da0fdb5eb6d7'>Resume</a>
                 </div>
             </div>
             <div className='about-image-container'>
-                <img src={Avatar} className='about-image-avatar'></img>
+                <img src={Avatar} className='about-image-avatar' alt="Filip's virtual avatar"></img>
             </div>
         </div>
     )
