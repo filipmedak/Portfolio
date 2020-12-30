@@ -40,7 +40,9 @@ const Project = () => {
                 <a href={activeProject.liveUrl} className={!activeProject.liveUrl ? 'lower-opacity' : ''}>View live →</a>
             </div>
             <div className='active-project-main-image-container'> 
-                <div className='active-project-main-image' style={{backgroundImage: `url(${activeProject.mainImage})`}}></div>
+                <a href={activeProject.liveUrl ? activeProject.liveUrl : activeProject.codeUrl}>
+                    <div className='active-project-main-image' style={{backgroundImage: `url(${activeProject.mainImage})`}}></div>
+                </a>
             </div>
             <div className='active-project-software-list-container'>
                 <h2>Software used</h2>

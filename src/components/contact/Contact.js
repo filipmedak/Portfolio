@@ -1,5 +1,7 @@
 // React Router
 import React, { useState } from 'react'
+// React Spring
+import {animated, useSpring} from 'react-spring'
 // Email form
 import emailjs from 'emailjs-com'
 
@@ -30,8 +32,18 @@ const Contact = () => {
         setFinished(true)
     }
 
+    // Reset to top 
+    window.scroll({ top:0, left:0, behavior:'auto'})
+
+    // Animations
+    const props = useSpring({
+        config: {duration: 750},
+        from: {opacity: 0},
+        to: {opacity: 1},
+    })
+
     return (
-        <div className='contact'>
+        <animated.div style={props} className='contact fade-in-left'>
             <div className='contact-heading-container'>
                 <h1 className='contact-main-heading'>Contact me.</h1>
                 <p className='contact-heading-email'>email: filip.medak213@gmail.com</p>
@@ -81,7 +93,7 @@ const Contact = () => {
                 </label>
                 <input className='contact-submit-button' type='submit' value='Send'></input>
             </form>
-        </div>
+        </animated.div>
     )
 }
 

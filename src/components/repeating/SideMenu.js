@@ -15,7 +15,7 @@ const SideMenu = ({sideMenu, toggleSideMenu}) => {
     })
 
     return (
-        <animated.div style={props} className='side-menu' onClick={() => toggleSideMenu(!sideMenu)}>
+        <animated.div style={props} className='side-menu' onClick={() => {toggleSideMenu(!sideMenu)}}>
             <img src={XIcon} className='x-sign' alt='X sign'></img>
             <div className='side-menu-list'>
                 <Link to='/'>Home</Link>

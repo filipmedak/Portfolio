@@ -77,12 +77,6 @@ const ProjectList = () => {
     // Display error if catched
     error && console.log(error)
 
-    // Reset page to top
-    const resetPagePosition = () => {
-        window.scroll(0, 0)
-        // window.scroll({ top:0, left:0, behavior:'auto'})
-    }
-
     // Animations
     const props = useSpring({
         config: {duration: 750},
@@ -125,7 +119,7 @@ const ProjectList = () => {
                         to='/project' 
                         onClick={() => {
                             setActiveProject(project)
-                            resetPagePosition()
+                            window.scroll({ top:0, left:0, behavior:'auto'})
                         }} 
                         id={`project-${project.id}`} 
                         key={project.id}

@@ -67,12 +67,12 @@
             font-family: $main-font;
             text-transform: uppercase;
             font-weight: 700;
-            max-width: 15rem;
+            max-width: 25rem;
             padding: 0.5rem 0rem;
             background: transparent;
             border: 2px solid #000;
-            margin-top: $xl-size;
             cursor: pointer;
+            margin-top: 7.5rem;
             transition: $transition-time;
         }
 
@@ -121,19 +121,7 @@
                     max-width: 70rem;
                     margin-top: $m-size;
                 }
-            }
-
-            // Submit button
-            .contact-submit-button {
-                font-family: $main-font;
-                text-transform: uppercase;
-                font-weight: 700;
-                max-width: 12.5rem;
-                padding: 0.5rem 0;
-                background: transparent;
-                border: 2px solid #000;
-                margin-top: $xl-size;
-            }
+            } 
         }
     }
 }

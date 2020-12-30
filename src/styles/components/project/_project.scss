@@ -84,6 +84,7 @@
             
             // Software image
             img {
+                width: 4rem;
                 max-width: 4rem;
                 display: inline-block;
                 vertical-align: middle;
@@ -94,6 +95,7 @@
             p {
                 vertical-align: middle;
                 display: inline-block;
+                white-space: nowrap;
             }
         }
     }

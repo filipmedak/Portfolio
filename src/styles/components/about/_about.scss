@@ -3,7 +3,7 @@
     max-width: 90%;
     margin: 0 auto;
     display: grid;
-
+   
     // About text container
     .about-text-container {
         display: inline-block;
@@ -56,7 +56,8 @@
                 padding: 1.25rem 4rem;
                 text-align: center;
                 cursor: pointer;
-                transition: $transition-time;
+                max-width: 100rem;
+                width: 100%;
             }
 
             // Projects link
@@ -115,6 +116,14 @@
     .about {
         grid-template-columns: 1fr 1fr;
         margin-top: $xl-size;
+
+        .about-text-container {
+            justify-self: end;
+        }
+
+        .about-image-container {
+            justify-self: start;
+        }
     }
 }
 
@@ -142,16 +151,6 @@
 
             p {
                 font-size: 2rem;
-            }
-
-            // Links container
-            .about-buttons-container {
-
-                
-                a {
-                    max-width: 100rem;
-                    width: 100%;
-                }
             }
         }
 

@@ -16,7 +16,7 @@ const Intro = () => {
 
     return (
         <animated.div style={props} className='intro'>
-            <div className='intro-text'>
+            <div className='intro-text fade-in-left'>
                 <div className='intro-text-container'>
                     <h1 className='intro-text-one'>Passionate</h1>
                     <h1 className='intro-text-two'>Multimedia</h1>
@@ -27,7 +27,7 @@ const Intro = () => {
                     <Link className='contact-button' to='/contact'>Contact me</Link>
                 </div>
             </div>
-           <div className='intro-image'>
+           <div className='intro-image fade-in-right'>
                 <img src={IntroIllustration} className='intro-illustration' alt='Personal Illustration'/>
            </div>
         </animated.div>
