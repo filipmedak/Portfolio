@@ -1,5 +1,5 @@
 // React Router
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 // React Spring
 import {animated, useSpring} from 'react-spring'
 // Email form
@@ -33,7 +33,9 @@ const Contact = () => {
     }
 
     // Reset to top 
-    window.scroll({ top:0, left:0, behavior:'auto'})
+    useEffect(() => {
+        window.scroll({ top:0, left:0, behavior:'auto'})
+    }, [])
 
     // Animations
     const props = useSpring({
